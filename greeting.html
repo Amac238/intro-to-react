@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang='en'>
+<html>
   <head>
     <title>My First React App</title>
   </head>
@@ -10,19 +10,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
 <script type="text/babel">
-  class Greeting extends React.component{
-    render(){
-      return (
-      <div>
-        <h1>Hello {this.props.name}</h1>
-      </div>
-    );
+
+class HelloThere extends React.component {
+
+  constructor (props) {
+    super(props)
+    this.state = {
+      city: 'Stow',
+      UsState: 'OH'
     }
   }
+  render(){
+    return(
+    <div>
+      <p>Hello there {this.props.name}!</p>
+      <p>How is the weather in your City of {this.state.city}, {this.state.UsState}?</p>
+    </div>
+  );
+  }
+}
 
-  ReactDOM.render(
-  <Greeting name="Bloc Student"/>, document.getElementById('app')
+ReactDOM.render(
+<HelloThere name='Austin'/>,
 );
 </script>
   </body>
